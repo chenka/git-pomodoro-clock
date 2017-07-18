@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pomodoro Clock</title>
+  <script src="asset/vue.min.js"></script>
+  <link href='asset/bootstrap.min.css' rel='stylesheet'>
+  <link href='asset/app.css' rel='stylesheet'>
+</head>
+<body>
+  <div id="app" class="container text-center">
+    <div class="row title">
+      <h1>Pomodoro Clock</h1>    
+    </div>
+    
+    <div class="row setting">
+      <div class="break col-xs-6">
+        <p>BREAK LENGTH</p>
+        <p><span @click="setValue('breakLength', -1)" class="pointer">-</span><span class="number">{{breakLength}}</span><span class="pointer" @click="setValue('breakLength', 1)">+</span></p>
+      </div>
+      <div class="session col-xs-6">
+        <p>SESSION LENGTH</p>
+        <p><span class="pointer"  @click="setValue('sessionLength', -1)">-</span><span class="number">{{sessionLength}}</span><span class="pointer" @click="setValue('sessionLength', 1)">+</span></p>
+      </div>
+    </div>
+    <div class="clock pointer" @click="runClock">
+      <div class="state">{{stateText}}</div>
+      <div class="countdown">{{time}}</div>
+      <span class="fill" :style="{height: percentage + '%', background: background}"></span>
+    </div>
+    <footer class="text-center">
+      Created by <a class="hilight" href="https://www.linkedin.com/in/sarunyhot" target="_blank">Kao</a> | <a class="hilight" href="https://github.com/chenka/vue-pomodoro-clock" target="_blank">Github</a
+    ></footer>
+  </div>
+  <script src="asset/app.js"></script>
+</body>
+</html>
